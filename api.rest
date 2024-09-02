@@ -1,0 +1,10 @@
+GET http://localhost:3000/api/pokemon
+
+###
+GET http://localhost:3000/api/pokemon/list/1
+
+###
+GET http://localhost:3000/api/pokemon/6
+
+###
+GET http://localhost:3000/api/pokemon/search/cha/3

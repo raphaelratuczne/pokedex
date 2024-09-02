@@ -1,0 +1,22 @@
+<mat-dialog-content>
+  <mat-card class="poke-card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>{{pokemon?.id}} - {{pokemon?.name}}</mat-card-title>
+      <mat-card-subtitle>{{getTypes()}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="poke-img">
+      <img mat-card-image [src]="getImg()" [alt]="pokemon?.name">
+    </div>
+    <mat-card-content>
+      <p>
+        <strong>Altura:</strong> {{pokemon?.height}} decímetros
+      </p>
+      <p>
+        <strong>Peso:</strong> {{pokemon?.weight}} hectogramas
+      </p>
+      <p>
+        <strong>Experiência base:</strong> {{pokemon?.base_experience}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>

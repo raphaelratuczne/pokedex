@@ -1,0 +1,29 @@
+<div class="out-content">
+  <div class="main-content">
+
+    <mat-toolbar class="pokedex-header">
+      <h1 class="pokedex-title">Pokedex</h1>
+    </mat-toolbar>
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+    <mat-form-field class="pokedex-search">
+      <mat-label>Buscar</mat-label>
+      <input class="pokedex-search-input" matInput placeholder="Digite o nome do Pokemon"
+        (input)="onSearchChange($event)" [value]="search">
+    </mat-form-field>
+
+    <div *ngIf="list">
+      <mat-list class="pokedex-list">
+        <mat-list-item class="pokedex-item" *ngFor="let pokemon of list.results" (click)="showPokemon(pokemon.url)">
+          {{pokemon.name}}
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="pokedex-buttons">
+      <button mat-flat-button (click)="previousPage()" [disabled]="list?.previous === null">Anterior</button>
+      <button mat-flat-button (click)="nextPage()" [disabled]="list?.next === null">Próximo</button>
+    </div>
+
+  </div>
+</div>
